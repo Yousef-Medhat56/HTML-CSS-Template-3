@@ -11,6 +11,9 @@
   --text-light: #777;
   --main-paddding-top: 100px;
   --main-paddding-bottom: 100px;
+  --quality: #f44036;
+  --time: #009688;
+  --passion: #03a9f4;
 }
 * {
   margin: 0;
@@ -623,7 +626,6 @@ a {
   transform: translate(-50%, -50%);
   opacity: 0.3;
   z-index: -1;
- 
 }
 .gallery .container .box:hover img {
   transform: scale(1.08) rotate(5deg);
@@ -641,12 +643,12 @@ a {
   50% {
     width: 100%;
     height: 100%;
-}
-100%{
-  width: 100%;
+  }
+  100% {
+    width: 100%;
     height: 100%;
-  opacity: 0;
-}
+    opacity: 0;
+  }
 }
 .gallery .image img {
   max-width: 100%;
@@ -657,3 +659,175 @@ a {
   -o-transition: var(--main-transition-dur);
 }
 /* End Gallery  */
+
+/* Start Features  */
+
+.features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.features .box {
+  border: 1px solid #ccc;
+}
+.features .image img {
+  max-width: 100%;
+}
+
+.features .image {
+  position: relative;
+  overflow: hidden;
+}
+.features .image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  transition: var(--main-transition-dur) ease;
+  -webkit-transition: var(--main-transition-dur) ease;
+  -moz-transition: var(--main-transition-dur) ease;
+  -ms-transition: var(--main-transition-dur) ease;
+  -o-transition: var(--main-transition-dur) ease;
+}
+.features .quality .image::before {
+  background-color: var(--quality);
+}
+.features .time .image::before {
+  background-color: var(--time);
+}
+.features .passion .image::before {
+  background-color: var(--passion);
+}
+
+/*Start triangle */
+.features .image::after {
+  content: "\A";
+  border-style: solid;
+  border-width: 0 0 170px 500px;
+  border-color: transparent transparent #fff transparent;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: var(--main-transition-dur);
+  -webkit-transition: var(--main-transition-dur);
+  -moz-transition: var(--main-transition-dur);
+  -ms-transition: var(--main-transition-dur);
+  -o-transition: var(--main-transition-dur);
+}
+/*End triangle */
+.features .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 20px;
+  text-align: center;
+}
+.features .content h2 {
+  font-size: 40px;
+  position: relative;
+}
+.features .content h2::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  right: 50%;
+  width: 75%;
+  height: 5px;
+  transform: translateX(50%);
+  -webkit-transform: translateX(50%);
+  -moz-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  -o-transform: translateX(50%);
+}
+
+.features .quality h2::before {
+  background-color: var(--quality);
+}
+.features .time h2::before {
+  background-color: var(--time);
+}
+.features .passion h2::before {
+  background-color: var(--passion);
+}
+.features .content p {
+  font-size: 20px;
+  color: var(--text-light);
+  line-height: 1.7;
+  padding: 40px 0;
+}
+/* Start button  */
+.features .content button {
+  position: relative;
+  background-color: transparent;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 22px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  transition: var(--main-transition-dur);
+  -webkit-transition: var(--main-transition-dur);
+  -moz-transition: var(--main-transition-dur);
+  -ms-transition: var(--main-transition-dur);
+  -o-transition: var(--main-transition-dur);
+  
+}
+.features .content button::before {
+  content: "";
+  position: absolute;
+  bottom: 1px;
+  left: -1px;
+  height: calc(100% + 1px);
+  width: 0;
+  transition: var(--main-transition-dur);
+  -webkit-transition: var(--main-transition-dur);
+  -moz-transition: var(--main-transition-dur);
+  -ms-transition: var(--main-transition-dur);
+  -o-transition: var(--main-transition-dur);
+  z-index: -1;
+}
+.quality button {
+  color: var(--quality);
+  border: 3px solid var(--quality);
+}
+.quality button::before {
+  background-color: var(--quality);
+}
+.time button {
+  color: var(--time);
+  border: 3px solid var(--time);
+}
+.time button::before {
+  background-color: var(--time);
+}
+.passion button {
+  color: var(--passion);
+  border: 3px solid var(--passion);
+}
+.passion button::before {
+  background-color: var(--passion);
+}
+/* End button  */
+/*Start Hover*/
+
+.features .box:hover .image::after {
+  border-width: 170px 500px 170px 0px;
+}
+.features .box:hover button{
+  color: #fff;
+}
+.features .box:hover button::before{
+  width: calc(100% + 2px);
+}
+/*End Hover*/
+/* End Features  */
