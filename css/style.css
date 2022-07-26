@@ -1050,7 +1050,7 @@ a {
   overflow: hidden;
 }
 
-.services .box .info a{
+.services .box .info a {
   position: absolute;
   top: 50%;
   right: 12px;
@@ -1084,7 +1084,7 @@ a {
   align-items: center;
   padding-right: 15px;
 }
-.services .box .info::after{
+.services .box .info::after {
   content: "";
   position: absolute;
   background-color: #d5d5d5;
@@ -1097,7 +1097,7 @@ a {
 /* End counter  */
 
 /* Start hover  */
-.services .box{
+.services .box {
   transition: var(--main-transition-dur);
   -webkit-transition: var(--main-transition-dur);
   -moz-transition: var(--main-transition-dur);
@@ -1105,7 +1105,7 @@ a {
   -o-transition: var(--main-transition-dur);
 }
 
-.services .box::before{
+.services .box::before {
   content: "";
   height: 2px;
   background-color: var(--main-color);
@@ -1124,7 +1124,7 @@ a {
   -ms-transition: var(--main-transition-dur);
   -o-transition: var(--main-transition-dur);
 }
-.services .box:hover{
+.services .box:hover {
   transform: translateY(-10px);
   -webkit-transform: translateY(-10px);
   -moz-transform: translateY(-10px);
@@ -1132,8 +1132,59 @@ a {
   -o-transform: translateY(-10px);
   box-shadow: 0 12px 20px 0 rgb(0 0 0 / 25%), 0 2px 4px 0 rgb(0 0 0 / 20%);
 }
-.services .box:hover::before{
+.services .box:hover::before {
   width: 100%;
 }
 /* End hover  */
 /* End Services  */
+
+/* Start skills  */
+.our-skills .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.our-skills .skills {
+  flex: 1;
+}
+
+@media(max-width:991px){
+  .our-skills img{
+    display: none;
+  }
+}
+.our-skills .skill h3 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.our-skills .skill h3 span {
+  font-size: 12px;
+  border: 1px solid #ccc;
+  padding: 3px 5px;
+  border-radius: 4px;
+  color: var(--main-color);
+}
+
+.our-skills .skill .progress {
+  height: 30px;
+  width: 100%;
+  background-color: #ccc;
+  margin: 20px 0;
+  position: relative;
+}
+
+.our-skills .skill .progress span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--main-color);
+  transition: var(--main-transition-dur);
+  -webkit-transition: var(--main-transition-dur);
+  -moz-transition: var(--main-transition-dur);
+  -ms-transition: var(--main-transition-dur);
+  -o-transition: var(--main-transition-dur);
+}
+/* End skills  */
