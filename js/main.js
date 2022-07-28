@@ -1,24 +1,23 @@
-//Animate element width on scroll
-const SKILLS_SECTION = document.getElementById("our-skills");
-const PROGRESS_SPANS = document.querySelectorAll(".skill .progress span");
-
 //a function that calls another function on scrolling to a given section
-const callFunctionOnScroll = (section,func) => {
+const callFunctionOnScroll = (section,func,arguments) => {
   window.onscroll = () => {
-    if (window.scrollY >= section.offsetTop - 200) {
-      func(PROGRESS_SPANS)
+    if (window.scrollY >= section.offsetTop-250) {
+      func(...arguments)
     }
   };
 };
 
-//Animate width on scroll
+//Animate element width on scroll
+const SKILLS_SECTION = document.getElementById("our-skills");
+const PROGRESS_SPANS = document.querySelectorAll(".skill .progress span");
+
 const animateWidthOnScroll = (progressComponentsArr)=>{
   progressComponentsArr.forEach((component) => {
     component.style.width = component.dataset.width;
   });
 }
 
-callFunctionOnScroll(SKILLS_SECTION, animateWidthOnScroll)
+callFunctionOnScroll(SKILLS_SECTION, animateWidthOnScroll,[PROGRESS_SPANS])
 
 //Create countdown timer
 const DATE_COUNTDOWN = new Date("June 5, 2023").getTime()
