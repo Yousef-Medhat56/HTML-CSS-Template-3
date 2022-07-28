@@ -1581,8 +1581,7 @@ a {
 /* End pricing  */
 
 /* Start top videos  */
-.videos .container {
-}
+
 .videos .container .holder {
   background-color: var(--background-color);
   display: flex;
@@ -1653,3 +1652,98 @@ a {
   background-color: #fff;
 }
 /* End top videos  */
+
+/* Start Stats  */
+.stats {
+  position: relative;
+  background-image: url(https://raw.githubusercontent.com/ElzeroWebSchool/HTML_And_CSS_Template_Three/main/imgs/stats.jpg);
+  background-size: cover;
+  min-height: 300px;
+  z-index: 1;
+}
+
+.stats::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255 255 255 / 95%);
+  z-index: -1;
+}
+
+.stats h2 {
+  font-weight: bold;
+  font-size: 40px;
+  width: fit-content;
+  margin: 0 auto 50px;
+}
+
+.stats .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.stats .box {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 30px 15px;
+  opacity: 0.8;
+  position: relative;
+  transition: var(--main-transition-dur);
+  -webkit-transition: var(--main-transition-dur);
+  -moz-transition: var(--main-transition-dur);
+  -ms-transition: var(--main-transition-dur);
+  -o-transition: var(--main-transition-dur);
+}
+
+.stats .box .number {
+  display: block;
+  font-size: 50px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.stats .box .text {
+  color: var(--main-color);
+  font-style: italic;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Start hover  */
+.stats .box::before,.stats .box::after{
+  content: "";
+  position: absolute;
+  background-color: var(--main-color);
+  width: 2px;
+  height: 0;
+  transition: 0.6s;
+  -webkit-transition: 0.6s;
+  -moz-transition: 0.6s;
+  -ms-transition: 0.6s;
+  -o-transition: 0.6s;
+}
+
+.stats .box::before{
+  bottom: 0;
+  right: 0;
+}
+.stats .box::after{
+  top: 0;
+  left: 0;
+}
+.stats .box:hover {
+  opacity: 1;
+}
+
+.stats .box:hover::before,.stats .box:hover::after{
+  height: 100%;
+}
+/* End hover  */
+/* End Stats  */
