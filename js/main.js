@@ -2,17 +2,23 @@
 const SKILLS_SECTION = document.getElementById("our-skills");
 const PROGRESS_SPANS = document.querySelectorAll(".skill .progress span");
 
-const animateWidthOnScroll = (section, progressComponentsArr) => {
+//a function that calls another function on scrolling to a given section
+const callFunctionOnScroll = (section,func) => {
   window.onscroll = () => {
     if (window.scrollY >= section.offsetTop - 200) {
-      progressComponentsArr.forEach((component) => {
-        component.style.width = component.dataset.width;
-      });
+      func(PROGRESS_SPANS)
     }
   };
 };
 
-animateWidthOnScroll(SKILLS_SECTION, PROGRESS_SPANS)
+//Animate width on scroll
+const animateWidthOnScroll = (progressComponentsArr)=>{
+  progressComponentsArr.forEach((component) => {
+    component.style.width = component.dataset.width;
+  });
+}
+
+callFunctionOnScroll(SKILLS_SECTION, animateWidthOnScroll)
 
 //Create countdown timer
 const DATE_COUNTDOWN = new Date("June 5, 2023").getTime()
