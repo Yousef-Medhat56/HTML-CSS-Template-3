@@ -1,12 +1,3 @@
-//a function that calls another function on scrolling to a given section
-const callFunctionOnScroll = (section, func, arguments) => {
-  window.onscroll = () => {
-    if (window.scrollY >= section.offsetTop - 250) {
-      func(...arguments);
-    }
-  };
-};
-
 //Animate element width on scroll
 const SKILLS_SECTION = document.getElementById("our-skills");
 const PROGRESS_SPANS = document.querySelectorAll(".skill .progress span");
@@ -16,8 +7,6 @@ const animateWidthOnScroll = (progressComponentsArr) => {
     component.style.width = component.dataset.width;
   });
 };
-
-callFunctionOnScroll(SKILLS_SECTION, animateWidthOnScroll, [PROGRESS_SPANS]);
 
 //Create countdown timer
 const DATE_COUNTDOWN = new Date("June 5, 2023").getTime();
@@ -69,7 +58,6 @@ const increaseNumbers = (elm) => {
 
 const controlIncrement = (elmsArr) => {
   if (!started) {
-    console.log(started)
     elmsArr.forEach((elm) => {
       increaseNumbers(elm);
     });
@@ -81,4 +69,11 @@ const STATS_SECTION = document.getElementById("stats");
 const STATS_SPANS = document.querySelectorAll(".stats .number");
 let started = false;
 
-callFunctionOnScroll(STATS_SECTION, controlIncrement, [STATS_SPANS,started]);
+window.onscroll=()=>{
+  if(window.scrollY>=SKILLS_SECTION.offsetTop-250){
+    animateWidthOnScroll(PROGRESS_SPANS)
+  }
+  if(window.scrollY>=STATS_SECTION.offsetTop-250){
+    controlIncrement(STATS_SPANS)
+  }
+}
