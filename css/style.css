@@ -1702,8 +1702,8 @@ a {
   -o-transition: var(--main-transition-dur);
 }
 
-.stats .box .number {
-  display: block;
+.stats .box .number,
+.stats .money-number {
   font-size: 50px;
   font-weight: bold;
   margin: 10px 0;
@@ -1717,7 +1717,8 @@ a {
 }
 
 /* Start hover  */
-.stats .box::before,.stats .box::after{
+.stats .box::before,
+.stats .box::after {
   content: "";
   position: absolute;
   background-color: var(--main-color);
@@ -1730,11 +1731,11 @@ a {
   -o-transition: 0.6s;
 }
 
-.stats .box::before{
+.stats .box::before {
   bottom: 0;
   right: 0;
 }
-.stats .box::after{
+.stats .box::after {
   top: 0;
   left: 0;
 }
@@ -1742,7 +1743,8 @@ a {
   opacity: 1;
 }
 
-.stats .box:hover::before,.stats .box:hover::after{
+.stats .box:hover::before,
+.stats .box:hover::after {
   height: 100%;
 }
 /* End hover  */
