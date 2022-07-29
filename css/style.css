@@ -169,6 +169,24 @@ a {
   background-size: 30px 30px;
 }
 /* End spikes  */
+
+/* Start Dots  */
+.dots {
+  background-image: url("https://raw.githubusercontent.com/ElzeroWebSchool/HTML_And_CSS_Template_Three/main/imgs/dots.png");
+  height: 186px;
+  width: 204px;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+.dots-up {
+  top: 200px;
+  right: 0;
+}
+.dots-down {
+  bottom: 200px;
+  left: 0;
+}
+/* End Dots  */
 /* End global styles*/
 
 /* Start Header */
