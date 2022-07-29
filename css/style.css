@@ -1299,6 +1299,9 @@ a {
 /*End Work steps  */
 
 /* Start Events  */
+.events{
+  position: relative;
+}
 .events .container {
   display: flex;
   align-items: center;
@@ -1463,6 +1466,7 @@ a {
 
 /* Start pricing  */
 .pricing {
+  position: relative;
   background-color: var(--background-color);
 }
 
