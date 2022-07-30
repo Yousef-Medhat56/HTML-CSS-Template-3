@@ -1,2 +1,2 @@
 # HTML-CSS-Template-3
-A landing page using html, css, js.
+Building a landing page using HTML, CSS, JS with the help of [ElZero Web School tutorial](https://www.youtube.com/playlist?list=PLDoPjvoNmBAxuCSp2_-9LurPqRVwketnc)
